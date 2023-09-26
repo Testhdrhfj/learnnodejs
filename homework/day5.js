@@ -23,6 +23,15 @@ function kiemTraSoNT(a) {
     }
     return true
 }
+function inSoNT(y) {
+    for (var k = 1; k <= y; k += 1) {
+        if (kiemTraSoNT(k)) {
+            console.log(k)
+        }
+    }
+}
+
+// inSoNT(100)
 // console.log(kiemTraSoNT(11))
 function timBoi(x, y) {
     var cout = 0
