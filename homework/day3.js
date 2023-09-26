@@ -81,3 +81,34 @@ function fibonacci(a) {
     }
 }
 // fibonacci(3)
+
+function chiaLayDu(n, m) {
+    var result = 0
+    for (var i = 0; i <= n; i = i + m) {
+        result = n - i
+    }
+
+    return result
+}
+
+function kiemTraSoNT(a) {
+    if (a > 0) {
+        if (a < 3) {
+            console.log(a + ' Là số nguyên tố')
+            return
+            // return true
+        } else {
+            for (var j = 2; j < a; j += 1) {
+                if (chiaLayDu(a, j) == 0) {
+                    console.log(a + ' Không phải là số nguyên tố')
+                    // return false
+                }
+            }
+        }
+    } else {
+    }
+    console.log(a + ' Là số nguyên tố')
+    return
+    // return true
+}
+kiemTraSoNT(5)
