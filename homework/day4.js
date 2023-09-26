@@ -42,8 +42,10 @@ function timBoi(x, y) {
         }
     }
 }
-// timBoi(95, 3)
+// timBoi(2, 3)
 function timBoiPhamVi(x, y, z) {
+
+    //
     for (var i = y; i <= z; i += 1) {
         if (chiaLayDu(i, x) == 0) {
             console.log(i)
@@ -53,12 +55,12 @@ function timBoiPhamVi(x, y, z) {
 // timBoiPhamVi(5, 30, 40)
 function veTamGiac1(y) {
     var col = ''
-    for (var i = 0; i < y; i += 1) {
+    for (var i = 1; i <= y; i += 1) {
         col += '*'
-        console.log(col)
+        console.log(i + ' - ' + col)
     }
 }
-// veTamGiac1(6)
+veTamGiac1(6)
 function veTamGiac2(x) {
     for (var i = 1; i <= x; i += 1) {
         var col = ''
