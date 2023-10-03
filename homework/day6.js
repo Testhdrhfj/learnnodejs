@@ -12,7 +12,7 @@ function maxArr(arr) {
 
 function minArr(arr) {
     var min = maxArr(arr)
-    for (var i = 1; i < arr.length; i += 1) {
+    for (var i = 0; i < arr.length; i += 1) {
         if (arr[i] < min) {
             min = arr[i]
         } else {
@@ -196,11 +196,73 @@ function bai_tap_33(arr) {
     }
     avg = tong / (arr.length)
     var obj = { "tong": tong, "tich": tich, "Trungbinh": avg }
-    
+
     return obj
 }
+function bai_tap_34(arr) {
+    var obj = {}
+    // for (var i = 0; i < arr.length; i += 1) {
+    a = maxArr(arr)
+    b = minArr(arr)
+    obj = { "gia tri lon nhat ": a, "gia tri nho nhat": b }
+    return obj
+    // }
+}
+function timTrung(arr, a) {
+    var count = 0
+    for (var i = 0; i < arr.length; i += 1) {
+        if (arr[i] == a) {
+            count += 1
+        }
+    }
+    return count
+}
+function bai_tap_35(arr) {
+    var max = 0
+    var sotrung = 0
+    for (var i = 0; i < arr.length; i += 1) {
+        c = timTrung(arr, arr[i])
+        // console.log(c)
+        if (c > max) {
+            max = c
+            sotrung = arr[i]
 
-console.log(bai_tap_33([1, 4, 5, 6, 7]))
+        }
+    }
+    return { "so xuat hien": sotrung, "so lan xuat hien": max }
+}
+
+function kiemTraSoNT(a) {
+    if (a > 0) {
+        if (a < 3) {
+            return true
+        } else {
+            for (var j = 2; j < a; j += 1) {
+                if (chiaLayDu(a, j) == 0) {
+                    return false
+                }
+            }
+        }
+    } else {
+    }
+    return true
+}
+function bai_tap_37(arr) {
+    var a = []
+    for (var i = 0; i < arr.length; i += 1) {
+        if (kiemTraSoNT(arr[i])) {
+            a.push(arr[i])
+        }
+    }
+    return a
+}
+function bai_tap_38(arr, n) {
+    for (var i = 0; i < arr.length; i += 1) {
+        arr[i] = Math.round(arr[i] / n)
+    }
+    return arr
+}
+// console.log(bai_tap_38([1, 2, 3, 4, 5, 7, 47, 49, 101], 9))
 // a = bai_tap_30(28)
 // console.log(a)
 
