@@ -22,4 +22,7 @@ function inArr(arr) {
     }
     return a
 }
-console.log(inArr(arr1))
+// console.log(inArr(arr1))
+
+
+
