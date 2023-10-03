@@ -188,14 +188,15 @@ function bai_tap_32(a) {
 
 function bai_tap_33(arr) {
     var tong = 0
-    var tich = 0
+    var tich = 1
     var avg = 0
-    var obj = { "tong": tong, "tich": tich, "Trungbinh": avg }
     for (var i = 0; i < arr.length; i += 1) {
         tong += arr[i]
         tich = tich * arr[i]
     }
     avg = tong / (arr.length)
+    var obj = { "tong": tong, "tich": tich, "Trungbinh": avg }
+    
     return obj
 }
 
