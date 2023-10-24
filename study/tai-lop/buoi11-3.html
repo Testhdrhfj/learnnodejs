@@ -20,35 +20,28 @@
     <div class="row">
         <!-- <div></div> -->
         <div class="col pt-3">
-            <label>A:</label>
-            <input 
-                placeholder="Nhập A"
-                id="inpA"
-            ></input>
+            <label>USD -> VNĐ</label>
+            <br>
+            <label>USD</label>
+            <input onkeyup="changeMoney(1)" placeholder="1" id="usd2vnd" value="1"></input>
+            <label>VNĐ</label>
             <br>
             <br>
-            <label>B:</label>
-            <input 
-                placeholder="Nhập B"
-                id="inpB"
-            ></input>
+            <label>VNĐ -> USD </label>
             <br>
-            <br>
-            <label>C:</label>
-            <input 
-                placeholder="Nhập C"
-                id="inpC"
-            ></input>
+            <label>VNĐ</label>
+            <input onkeyup="changeMoney(2)" placeholder="24560" id="vnd2usd" value="24560"></input>
+            <label>USD</label>
+
         </div>
-        <div class="col pt-3">
-            <button class="btn-warning" onclick="btnGiai()">Giải</button>
-        </div>
+        <!-- <div class="col pt-3">
+        </div> -->
     </div>
-    <div class="col pt-3">
+    <!-- <div class="col pt-3">
         <label>KQ:</label>
         <label id="kq">0000</label>
-    </div>
-    <script src="src/buoi11.js"></script>
+    </div> -->
+    <script src="/src/buoi11-3.js"></script>
 
 
 </body>
