@@ -20,18 +20,38 @@
     <div class="row">
         <!-- <div></div> -->
         <div class="col pt-3">
-            <label>USD -> VNĐ</label>
+            <h1>USD -> VNĐ</h1>
             <br>
             <label>USD</label>
-            <input onkeyup="changeMoney(1)" placeholder="1" id="usd2vnd" value="1"></input>
+            <input type="number" onkeyup="changeMoney(1)" placeholder="1" id="usd2vnd" value="1"></input>
+            <!-- <h5>VNĐ</h5>
+            <h6 id="vnd">24560</h6> -->
+            <br>
+            <br>
+            
+            <div>
+                <h6>
+                    VNĐ :
+                    <label id="vnd">1</label>
+                </h6>
+                
+            </div>
+            <br>
+            <br>
+            <h1>VNĐ -> USD </h1>
+            <br>
             <label>VNĐ</label>
+            <input type="number" onkeyup="changeMoney(2)" placeholder="24560" id="vnd2usd" value="24560"></input>
+            <!-- <label>USD</label> -->
             <br>
             <br>
-            <label>VNĐ -> USD </label>
-            <br>
-            <label>VNĐ</label>
-            <input onkeyup="changeMoney(2)" placeholder="24560" id="vnd2usd" value="24560"></input>
-            <label>USD</label>
+            <div>
+                <h6>
+                    USD :
+                    <label id="usd">1</label>
+                </h6>
+                
+            </div>
 
         </div>
         <!-- <div class="col pt-3">
