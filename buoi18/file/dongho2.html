@@ -1,0 +1,171 @@
+<html>
+
+<head>
+    <style>
+        h1 {
+            color: aqua;
+            text-align: center;
+            font-size: 80px;
+        }
+
+        .clocktime {
+            color: aquamarine;
+            text-align: center;
+            font-size: 80px;
+        }
+
+        .btn {
+            background-color: greenyellow;
+            margin-left: 40%;
+            font-size: 50px;
+            text-align: center;
+        }
+
+        .btnstop {
+            background-color: red;
+            font-size: 50px;
+            text-align: center;
+            margin-left: 40%;
+
+
+        }
+
+        .btncontinue {
+            background-color: yellowgreen;
+            font-size: 50px;
+            margin-left: 35%;
+
+
+        }
+
+        .btnde {
+            background-color: chocolate;
+            font-size: 50px;
+
+        }
+
+
+        .btntu {
+            background-color: chocolate;
+            font-size: 50px;
+            margin-left: 40%;
+
+
+        }
+
+        .hour-cl {
+            width: 120px;
+            font-size: 50px;
+        }
+
+        span {
+            font-size: 50px;
+        }
+
+        .btnput {
+            font-size: 50px;
+            margin-left: 40%;
+        }
+
+        h2 {
+            text-align: center;
+
+        }
+    </style>
+    <!-- <link rel="stylesheet" type="text/css" href="/src/style.css"> -->
+</head>
+
+
+<body>
+
+    <h1 id="dongho">00:00:00</h1>
+    <!-- <audio>
+        <source src="audio.mp3" type="audio/mpeg">
+    </audio> -->
+    <h1 id="bamgio" class="clocktime">00:00:00</h1>
+
+    <button id="BtnStart" onclick="startTime()" class="btn">Bắt đầu</button>
+    <button id="BtnDelete" onclick="BtnClear()" class="btnde" hidden="true">Xoá</button>
+    <br>
+    <br>
+    <br>
+    <button id="BtnTurn" onclick="BtnTurn()" class="btntu">Vòng</button>
+    <h2 id="turn"></h2>
+
+    <script>var b = 0
+        function chuyenSo(x) {
+
+            if (x < 10) {
+                return "0" + x
+            } else {
+                return x
+            }
+        }
+
+
+        function clickmouse() {
+            var data = new Date()
+            document.getElementById('dongho').innerHTML = chuyenSo(data.getHours()) + ":" + chuyenSo(data.getMinutes()) + ":" + chuyenSo(data.getSeconds())
+
+        }
+
+        function run(x, y, z) {
+            document.getElementById("bamgio").innerHTML = x + ":" + y + ":" + z
+        }
+
+        function chuyenTime(t) {
+
+            var x = Math.floor(t / 3600)
+            var y = Math.floor((t % 3600) / 60)
+            var z = Math.floor(t % 60)
+            return { h: x, m: y, s: z }
+        }
+        function runTimeclock() {
+            var o = chuyenTime(b)
+            b += 1
+            run(chuyenSo(o.h), chuyenSo(o.m), chuyenSo(o.s))
+        }
+        var clickBtn = true
+        var timerX;
+        function startTime() {
+            if (clickBtn) {
+                timerX = setInterval(runTimeclock, 100)
+                clickBtn = false
+                document.getElementById('BtnStart').innerHTML = "Dừng"
+                document.getElementById('BtnStart').className = "btnstop"
+                document.getElementById('BtnDelete').hidden = true
+            } else {
+                clearInterval(timerX)
+                clickBtn = true
+                document.getElementById('BtnStart').innerHTML = "Tiếp tục"
+                document.getElementById('BtnStart').className = "btncontinue"
+                document.getElementById('BtnDelete').hidden = false
+
+            }
+        }
+        function BtnClear() {
+            document.getElementById('BtnStart').innerHTML = "Bắt đầu"
+            document.getElementById('BtnStart').className = "btn"
+            document.getElementById('BtnDelete').hidden = true
+            document.getElementById("turn").innerHTML = ""
+            turn = 1
+            b = 0
+            runTimeclock()
+        }
+        var turn = 1
+        function BtnTurn() {
+            if ((b - 1) > 0) {
+                var o = chuyenTime(b - 1)
+                var outputtime = "Vòng " + turn + " - " + chuyenSo(o.h) + " : " + chuyenSo(o.m) + " : " + chuyenSo(o.s)
+
+                document.getElementById("turn").innerHTML += outputtime + "<br>"
+                turn += 1
+            }
+        }
+        setInterval(clickmouse, 1000)
+
+
+    </script>
+</body>
+
+</html>

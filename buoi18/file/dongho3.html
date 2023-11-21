@@ -1,0 +1,195 @@
+<html>
+
+<head>
+    <style>
+        h1 {
+            color: aqua;
+            text-align: center;
+            font-size: 80px;
+        }
+
+        .clocktime {
+            color: aquamarine;
+            text-align: center;
+            font-size: 80px;
+        }
+
+        .btn {
+            background-color: greenyellow;
+            margin-left: 40%;
+            font-size: 50px;
+            text-align: center;
+        }
+
+        .btnstop {
+            background-color: red;
+            font-size: 50px;
+            text-align: center;
+            margin-left: 40%;
+
+
+        }
+
+        .btncontinue {
+            background-color: yellowgreen;
+            font-size: 50px;
+            margin-left: 35%;
+
+
+        }
+
+        .btnde {
+            background-color: chocolate;
+            font-size: 50px;
+
+        }
+
+
+        .btntu {
+            background-color: chocolate;
+            font-size: 50px;
+            margin-left: 40%;
+
+
+        }
+
+        .hour-cl {
+            width: 120px;
+            font-size: 50px;
+        }
+
+        span {
+            font-size: 50px;
+        }
+
+        .btnput {
+            font-size: 50px;
+            margin-left: 40%;
+        }
+
+        h2 {
+            text-align: center;
+
+        }
+    </style>
+    <!-- <link rel="stylesheet" type="text/css" href="/src/style.css"> -->
+</head>
+
+<body>
+    <h1 id="dongho">00:00:00</h1>
+
+    <audio id="audioElement">
+        <source src="./audio/alarm2.mp3" type="audio/mp3">
+    </audio>
+    <h1 id="bamgio" class="clocktime">00:00:00</h1>
+    <h2>
+        <input type="number" id="hour" class="hour-cl"></input>
+        <span>:</span>
+        <input type="number" id="minute" class="hour-cl"></input>
+        <span>:</span>
+        <input type="number" id="sec" class="hour-cl"></input>
+    </h2>
+    <br>
+    <br>
+    <br>
+    <button id="BtnPut" onclick="BtnPut()" class="btnput">Đặt giờ</button>
+    <br>
+    <br>
+    <br>
+    <button id="BtnStart" onclick="startTime()" class="btn">Bắt đầu</button>
+    <button id="BtnDelete" onclick="BtnClear()" class="btnde" hidden="true">Xoá</button>
+
+    <script>var b = 0
+        function chuyenSo(x) {
+
+            if (x < 10) {
+                return "0" + x
+            } else {
+                return x
+            }
+        }
+
+
+        function clickmouse() {
+            var data = new Date()
+            document.getElementById('dongho').innerHTML = chuyenSo(data.getHours()) + ":" + chuyenSo(data.getMinutes()) + ":" + chuyenSo(data.getSeconds())
+
+        }
+
+        function run(x, y, z) {
+            document.getElementById("bamgio").innerHTML = x + ":" + y + ":" + z
+        }
+
+        function chuyenTime(t) {
+
+            var x = Math.floor(t / 3600)
+
+            var y = Math.floor((t % 3600) / 60)
+            var z = t - (x * 3600 + y * 60)
+
+            return { h: x, m: y, s: z }
+        }
+        function runTimeclock() {
+
+            if (b > 0) {
+                var o = chuyenTime(b)
+                b -= 1
+                run(chuyenSo(o.h), chuyenSo(o.m), chuyenSo(o.s))
+            } else {
+                var o = chuyenTime(b)
+                run(chuyenSo(o.h), chuyenSo(o.m), chuyenSo(o.s))
+                clearInterval(timerX)
+                document.getElementById('BtnStart').innerHTML = "Bắt đầu"
+                document.getElementById('BtnStart').className = "btn"
+                clickBtn = true
+                if (clickBtnde == false) {
+                    console.log('done')
+                    document.getElementById('audioElement').play()
+                } else {
+                    clickBtnde = false
+                }
+            }
+        }
+        var clickBtn = true
+        var timerX;
+        var clickBtnde = false
+        function startTime() {
+            if (b > 0) {
+                if (clickBtn) {
+                    timerX = setInterval(runTimeclock, 100)
+                    clickBtn = false
+                    document.getElementById('BtnStart').innerHTML = "Dừng"
+                    document.getElementById('BtnStart').className = "btnstop"
+                    document.getElementById('BtnDelete').hidden = true
+                } else {
+                    clearInterval(timerX)
+                    clickBtn = true
+                    document.getElementById('BtnStart').innerHTML = "Tiếp tục"
+                    document.getElementById('BtnStart').className = "btncontinue"
+                    document.getElementById('BtnDelete').hidden = false
+                }
+            }
+        }
+        function BtnClear() {
+            document.getElementById('BtnStart').innerHTML = "Bắt đầu"
+            document.getElementById('BtnStart').className = "btn"
+            document.getElementById('BtnDelete').hidden = true
+            b = 0
+            clickBtnde = true
+            runTimeclock()
+        }
+        function BtnPut() {
+            b = 0
+            var hour = Math.floor(document.getElementById('hour').value)
+            var min = Math.floor(document.getElementById('minute').value)
+            var sec = Math.floor(document.getElementById('sec').value)
+            b = hour * 3600 + min * 60 + sec
+            var o = chuyenTime(b)
+            // console.log(o)
+            run(chuyenSo(o.h), chuyenSo(o.m), chuyenSo(o.s))
+        }
+        setInterval(clickmouse, 1000)
+    </script>
+</body>
+
+</html>
