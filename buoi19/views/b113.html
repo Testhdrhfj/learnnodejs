@@ -1,0 +1,71 @@
+<html>
+
+<head>
+
+    <title>Giải Phương Trình</title>
+    <link rel="stylesheet" type="text/css" href="../public/css/style.css">
+
+    <!-- <link rel="stylesheet" type="text/css" href="../css/style.css"> -->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+</head>
+
+<body>
+    <div>
+        <h1>Chuyển Đổi Tỉ Giá
+
+            <h2>
+                <a href="./index.html">Trang chủ</a>
+                <h2>Link các bài tập:
+                    <a href="./b101.html">Bài tập 10 - 1</a>
+                    <a href="./b102.html">Bài tập 10 - 2</a>
+                    <a href="./b103.html">Bài tập 10 - 3</a>
+                    <a href="./b104.html">Bài tập 10 - 4</a>
+                    <a href="./b111.html">Bài tập 11 - 1</a>
+                    <a href="./b112.html">Bài tập 11 - 2</a>
+                </h2>
+            </h2>
+            <div class="container cal">
+                <div class="row">
+                    <div class="col pt-3">
+                        <h1>USD -> VNĐ</h1>
+                        <!-- <br> -->
+                        <label>USD</label>
+                        <input type="number" onkeyup="changeMoney(1)" placeholder="1" id="usd2vnd" value="1"></input>
+                        <!-- <br>        -->
+                        <div>
+                            <label>
+                                VNĐ :
+                                <label id="vnd">24560</label>
+                            </label>
+                        </div>
+                        <br>
+                        <h1>VNĐ -> USD </h1>
+                        <label>VNĐ</label>
+                        <input type="number" onkeyup="changeMoney(2)" placeholder="24560" id="vnd2usd"
+                            value="24560"></input>
+                        <div>
+                            <label>
+                                USD :
+                                <label id="usd">1</label>
+                            </label>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <script src="../public/js/b113.js"></script>
+
+    </div>
+</body>
+
+</html>

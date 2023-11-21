@@ -1,0 +1,106 @@
+h1 {
+    color: aqua;
+    text-align: center;
+    font-size: 80px;
+}
+
+#dongho {
+    margin-top: 5%;
+    font-size: 80px;
+}
+
+.clocktime {
+    color: aquamarine;
+    text-align: center;
+    font-size: 80px;
+}
+
+.btnst {
+    background-color: greenyellow;
+    margin-left: 40%;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-top: auto;
+    font-size: 50px;
+    text-align: center;
+}
+
+.btnstop {
+    background-color: red;
+    font-size: 50px;
+    text-align: center;
+    margin-left: 40%;
+    /* margin-left: auto; */
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-top: auto;
+
+
+}
+
+.btncontinue {
+    background-color: yellowgreen;
+    font-size: 50px;
+    margin-left: 35%;
+
+
+}
+
+.btnde {
+    background-color: chocolate;
+    font-size: 50px;
+
+}
+
+
+.btntu {
+    background-color: chocolate;
+    font-size: 50px;
+    margin-left: 40%;
+
+
+}
+
+.hour-cl {
+    width: 120px;
+    font-size: 50px;
+}
+
+span {
+    font-size: 50px;
+}
+
+.btnput {
+    font-size: 50px;
+    margin-left: 40%;
+}
+
+h2 {
+    text-align: center;
+
+}
+.col{
+    font-size: 50px;
+}
+.btncal{
+    margin-left: 10%;
+    margin-top: 5%;
+}
+
+.cal{
+    border-radius: 0%;
+    border: 2px solid aqua;
+    border-color: aqua;
+    text-align: center;
+}
+.inp{
+    border: 2px solid aqua;
+    border-color: aqua;
+    
+}
+.btn-d{
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 20%;
+    margin-right: auto;
+}

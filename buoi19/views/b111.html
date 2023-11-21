@@ -1,0 +1,65 @@
+<html>
+
+<head>
+
+    <title>Máy Tính Cơ Bản</title>
+    <link rel="stylesheet" type="text/css" href="../public/css/style.css">
+
+    <!-- <link rel="stylesheet" type="text/css" href="../css/style.css"> -->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+</head>
+
+<body>
+    <div>
+        <h1>Máy Tính Cơ Bản</h1>
+
+        <h2>
+            <a href="./index.html">Trang chủ</a>
+            <h2>Link các bài tập:
+                <a href="./b101.html">Bài tập 10 - 1</a>
+                <a href="./b102.html">Bài tập 10 - 2</a>
+                <a href="./b103.html">Bài tập 10 - 3</a>
+                <a href="./b104.html">Bài tập 10 - 4</a>
+                <a href="./b112.html">Bài tập 11 - 2</a>
+                <a href="./b113.html">Bài tập 11 - 3</a>
+            </h2>
+        </h2>
+        <div class="container cal">
+            <div class="row">
+                <div class="col pt-3">
+                    <label>A:</label>
+                    <input class="inp" placeholder="Nhập A" id="inpA"></input>
+                    <br>
+                    <br>
+                    <label>B:</label>
+                    <input class="inp" placeholder="Nhập B" id="inpB"></input>
+                </div>
+                <div class="col pt-3 btncal">
+
+                    <button class="btn-primary" onclick="Tinhtoan(1)">+</button>
+                    <button class="btn-success" onclick="Tinhtoan(2)">-</button>
+                    <button class="btn-warning" onclick="Tinhtoan(3)">x</button>
+                    <button class="btn-danger" onclick="Tinhtoan(4)">/</button>
+
+                </div>
+            </div>
+            <div class="col pt-3">
+                <label>KQ:</label>
+                <label id="kq">0000</label>
+            </div>
+        </div>
+        <script src="../public/js/b111.js"></script>
+
+    </div>
+</body>
+
+</html>
