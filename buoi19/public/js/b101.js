@@ -10,7 +10,7 @@ function chuyenSo(x) {
 
 
 function clickmouse() {
-    var data = new Date()
+    var data = new Date();
     document.getElementById('dongho').innerHTML = chuyenSo(data.getHours()) + ":" + chuyenSo(data.getMinutes()) + ":" + chuyenSo(data.getSeconds())
 
 }
